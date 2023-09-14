@@ -284,6 +284,24 @@
             border-color: green;
         }
 
+        /* Button Styles */
+        .my-button {
+            background-color: #4285f4; /* Google blue */
+            color: #ffffff; /* White text */
+            padding: 10px 20px; /* Padding around text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block;
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Cursor style on hover */
+        }
+
+        .my-button:hover {
+            background-color: #0d47a1; /* Darker blue on hover */
+        }
+        
         small {
             font-size: 12px;
         }
@@ -292,7 +310,7 @@
 
 <body class="" style="visibility: hidden;">
 
-<section id="top_sect" class="second">
+<!-- <section id="top_sect" class="second">
     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
@@ -318,22 +336,23 @@
         <option value="secondary_bg_color">secondary_bg_color</option>
         <option value="custom" id="bg_color_val">custom...</option>
     </select></div>
-</section>
+</section> -->
 <section>
     <div id="btn_status" class="hint" style="display: none;">
     </div>
     <p>Test links:</p>
     <ul>
-        <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li>
-        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
-        <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
-        <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li>
-        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
-        <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
-        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
+<!--         <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li> -->
+<!--         <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li> -->
+        <li><a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" target="_blank" class="my-button">Protecred Pool 😘</a></li>
+<!--         <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li> -->
+<!--         <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li> -->
+<!--         <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li> -->
+<!--         <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li> -->
+<!--         <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li> -->
+<!--         <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li> -->
     </ul>
-    <p>Test permissions:</p>
+<!--     <p>Test permissions:</p>
     <ul>
         <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
@@ -374,8 +393,8 @@
     <div class="hint">
         Version: <span id="ver"></span>,
         platform: <span id="platform"></span>
-    </div>
-</section>
+    </div> -->
+</section> 
 <div class="viewport-border"></div>
 <div class="viewport-stable_border"></div>
 
