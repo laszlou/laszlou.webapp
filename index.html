@@ -20,9 +20,9 @@
     </script>
     <style>
         body {
-            --bg-color: var(--tg-theme-bg-color, #fff);
+            --bg-color: var(--tg-theme-bg-color, #2e2e2e);
             font-family: sans-serif;
-            background-color: var(--bg-color);
+            background-color: #2e2e2e;
             color: var(--tg-theme-text-color, #222);
             font-size: 14px;
             margin: 0;
@@ -145,13 +145,13 @@
         section {
             padding: 15px;
             text-align: center;
-            background-color: var(--bg-color, #ffffff);
+            background-color: var(--bg-color, #2e2e2e);
         }
         section#top_sect {
-            background-color: var(--tg-theme-bg-color, #ffffff);
+            background-color: var(--tg-theme-bg-color, #2e2e2e);
         }
         section#top_sect.second {
-            background-color: var(--tg-theme-secondary-bg-color, #efefef);
+            background-color: var(--tg-theme-secondary-bg-color, #2e2e2e);
         }
         section .sect_row {
             margin: 10px 0;
@@ -286,7 +286,7 @@
 
         /* Button Styles */
         .my-button {
-            background-color: #4285f4; /* Google blue */
+            background-color: #733eeb; /* Google blue */
             color: #ffffff; /* White text */
             padding: 10px 20px; /* Padding around text */
             border: none; /* No border */
@@ -299,7 +299,7 @@
         }
 
         .my-button:hover {
-            background-color: #0d47a1; /* Darker blue on hover */
+            background-color: #592bc1; /* Darker blue on hover */
         }
         
         small {
@@ -310,8 +310,9 @@
 
 <body class="" style="visibility: hidden;">
 
-<!-- <section id="top_sect" class="second">
-    <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
+<section id="top_sect" class="second">
+    <a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" target="_blank" class="my-button">PP + Metamask 🦊 </a>
+<!--     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
     <button onclick="DemoApp.expand();">Expand Webview</button>
@@ -335,25 +336,24 @@
         <option value="bg_color" selected>bg_color</option>
         <option value="secondary_bg_color">secondary_bg_color</option>
         <option value="custom" id="bg_color_val">custom...</option>
-    </select></div>
-</section> -->
+    </select></div> -->
+</section>
 <section>
     <div id="btn_status" class="hint" style="display: none;">
     </div>
-    <p>Test links:</p>
+<!--     <p>Test links:</p> -->
     <ul>
-<!--         <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li> -->
-<!--         <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li> -->
-        <li><a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" target="_blank" class="my-button">Protecred Pool 😘</a></li>
-<!--         <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li> -->
-<!--         <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li> -->
-<!--         <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li> -->
-<!--         <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li> -->
-<!--         <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li> -->
-<!--         <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li> -->
-    </ul>
-<!--     <p>Test permissions:</p>
-    <ul>
+<!--         <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li>
+        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li> -->
+<!--         <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
+        <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
+        <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
+        <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
+    </ul> -->
+<!--     <p>Test permissions:</p> -->
+  <!--   <ul>
         <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestAudio(this);">Request Audio</a> <span></span></li>
@@ -700,17 +700,17 @@
         }
     };
 
-    const DemoAppInitData = {
-        init() {
-            DemoApp.init();
-            Telegram.WebApp.onEvent('themeChanged', function() {
-                document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-            });
-            document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
-            document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-            DemoApp.checkInitData();
-        }
-    };
+    // const DemoAppInitData = {
+    //     init() {
+    //         DemoApp.init();
+    //         Telegram.WebApp.onEvent('themeChanged', function() {
+    //             document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    //         });
+    //         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    //         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    //         DemoApp.checkInitData();
+    //     }
+    // };
 
     const DemoAppViewport = {
         init() {
@@ -763,26 +763,26 @@
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
 
-    if (DemoApp.initDataUnsafe.query_id) {
-        document.getElementById('main_btn').style.display = 'block';
-    }
-    document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
-    document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    // if (DemoApp.initDataUnsafe.query_id) {
+    //     document.getElementById('main_btn').style.display = 'block';
+    // }
+    // document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
+    // document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
-    document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
-    document.getElementById('text_field').focus();
-    document.getElementById('regular_field').addEventListener('input', function(e) {
-        const val = this.value.toLowerCase();
-        if (val.indexOf('progress') >= 0) {
-            Telegram.WebApp.MainButton.showProgress();
-        } else {
-            Telegram.WebApp.MainButton.hideProgress();
-        }
-    });
+    // document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    // // document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
+    // document.getElementById('text_field').focus();
+    // document.getElementById('regular_field').addEventListener('input', function(e) {
+    //     const val = this.value.toLowerCase();
+    //     if (val.indexOf('progress') >= 0) {
+    //         Telegram.WebApp.MainButton.showProgress();
+    //     } else {
+    //         Telegram.WebApp.MainButton.hideProgress();
+    //     }
+    // });
 
-    document.getElementById('ver').innerHTML = Telegram.WebApp.version;
-    document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
+    // document.getElementById('ver').innerHTML = Telegram.WebApp.version;
+    // document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
 
     if (DemoApp.initDataUnsafe.receiver) {
         document.getElementById('peer_wrap').style.display = 'block';
