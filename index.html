@@ -311,7 +311,7 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
-    <a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" target="_blank" class="my-button">PP + Metamask 🦊 </a>
+    <a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" class="my-button">PP + Metamask 🦊 </a>
     <button id="main_btn" onclick="DemoApp.sendMessage('');"> --- </button> <!--Send «Hello, World!» -->
     <button onclick="DemoApp.toggleMainButton(this);">Скрыть главную кнопку</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);"> --- </button> <!-- Send «Hello, World!» with inline webview button -->
@@ -416,7 +416,7 @@
             document.body.style.visibility = '';
             Telegram.WebApp.ready();
             Telegram.WebApp.MainButton.setParams({
-                text: 'ЗАКРЫТЬЬ WEBAPP',
+                text: 'ЗАКРЫТЬ WEBAPP',
                 is_visible: true
             }).onClick(DemoApp.close);
         },
