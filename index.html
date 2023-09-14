@@ -41,7 +41,7 @@
             padding: 10px 17px;
         }
         .btn-primary {
-            background-color: var(--tg-theme-button-color, #50a8eb);
+            background-color: var(--tg-theme-button-color, #343536);
             color: var(--tg-theme-button-text-color, #fff);
             border: none;
         }
@@ -54,7 +54,7 @@
             padding: 12px 20px;
             border: none;
             border-radius: 4px;
-            background-color: var(--tg-theme-button-color, #50a8eb);
+            background-color: var(--tg-theme-button-color, #343536);
             color: var(--tg-theme-button-text-color, #ffffff);
             cursor: pointer;
         }
@@ -312,11 +312,12 @@
 
 <section id="top_sect" class="second">
     <a href="javascript:window.open('https://react-dapp-v2-with-web3js.vercel.app');" target="_blank" class="my-button">PP + Metamask 🦊 </a>
-<!--     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
-    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
-    <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
-    <button onclick="DemoApp.expand();">Expand Webview</button>
-    <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
+    <button id="main_btn" onclick="DemoApp.sendMessage('');"> --- </button> <!--Send «Hello, World!» -->
+    <button onclick="DemoApp.toggleMainButton(this);">Скрыть главную кнопку</button>
+    <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);"> --- </button> <!-- Send «Hello, World!» with inline webview button -->
+    <button id="data_btn" onclick="DemoApp.sendTime(true);"> --- </button> <!-- Send current time to bot (x10) -->
+    <button onclick="DemoApp.expand();"> --- </button> <!-- Expand Webview -->
+    
     <input type="text" placeholder="Input text in regular input..." id="regular_field" />
     <div
         class="input"
@@ -336,24 +337,24 @@
         <option value="bg_color" selected>bg_color</option>
         <option value="secondary_bg_color">secondary_bg_color</option>
         <option value="custom" id="bg_color_val">custom...</option>
-    </select></div> -->
+    </select></div>
 </section>
 <section>
     <div id="btn_status" class="hint" style="display: none;">
     </div>
-<!--     <p>Test links:</p> -->
+    <p>Test links:</p>
     <ul>
-<!--         <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li>
-        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li> -->
-<!--         <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
+        <li><a id="regular_link" href="">Regular link #2</a> (opens inside webview)</li>
+        <li><a href="https://telegram.org/" target="_blank">target="_blank" link</a> (opens outside webview)</li>
+        <li><a href="javascript:window.open('https://telegram.org/');">window.open() link</a> (opens outside webview)</li>
         <li><a href="https://t.me/like">LikeBot t.me link</a> (opens inside Telegram app)</li>
         <li><a href="javascript:Telegram.WebApp.openTelegramLink('https://t.me/vote');">web_app_open_tg_link()</a> (opens inside Telegram app)</li>
         <li><a href="javascript:Telegram.WebApp.openLink('https://google.com/');">web_app_open_link()</a> (opens outside webview)</li>
         <li><a href="tg://resolve?domain=vote">VoteBot tg:// link</a> (does not open)</li>
         <li><a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">web_app_open_link({try_instant_view:true})</a> (opens IV inside Telegram app)</li>
-    </ul> -->
+    </ul>
 <!--     <p>Test permissions:</p> -->
-  <!--   <ul>
+    <ul>
         <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestAudio(this);">Request Audio</a> <span></span></li>
@@ -393,7 +394,7 @@
     <div class="hint">
         Version: <span id="ver"></span>,
         platform: <span id="platform"></span>
-    </div> -->
+    </div>
 </section> 
 <div class="viewport-border"></div>
 <div class="viewport-stable_border"></div>
@@ -415,7 +416,7 @@
             document.body.style.visibility = '';
             Telegram.WebApp.ready();
             Telegram.WebApp.MainButton.setParams({
-                text: 'CLOSE WEBVIEW',
+                text: 'ЗАКРЫТЬЬ WEBAPP',
                 is_visible: true
             }).onClick(DemoApp.close);
         },
@@ -429,10 +430,10 @@
             const mainButton = Telegram.WebApp.MainButton;
             if (mainButton.isVisible) {
                 mainButton.hide();
-                el.innerHTML = 'Show Main Button';
+                el.innerHTML = 'Показать главную кнопку';
             } else {
                 mainButton.show();
-                el.innerHTML = 'Hide Main Button';
+                el.innerHTML = 'Скрыть главную кнопку';
             }
         },
 
@@ -700,17 +701,17 @@
         }
     };
 
-    // const DemoAppInitData = {
-    //     init() {
-    //         DemoApp.init();
-    //         Telegram.WebApp.onEvent('themeChanged', function() {
-    //             document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    //         });
-    //         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
-    //         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    //         DemoApp.checkInitData();
-    //     }
-    // };
+    const DemoAppInitData = {
+        init() {
+            DemoApp.init();
+            Telegram.WebApp.onEvent('themeChanged', function() {
+                document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+            });
+            document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+            document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+            DemoApp.checkInitData();
+        }
+    };
 
     const DemoAppViewport = {
         init() {
@@ -725,6 +726,15 @@
                 .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
                     ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
         }
+
+        // НАСТРАИВАЕМ РАЗМЕНЫ ВЕБ АППА ШИРИНА ВЫСОТА В ЗАВИСИМОСТИ ОТ ЭКРАНА
+        // setData() {
+        //     document.querySelector('.viewport-border')
+        //         .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
+        //     document.querySelector('.viewport-stable_border')
+        //         .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
+        //             ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
+        // }
     };
 
     function byteLength(str) {
@@ -759,107 +769,107 @@
      * This part of code is used to initialize the demo app and set up the event handlers we need.
      */
 
-    // Telegram.WebApp.onEvent('themeChanged', function() {
-    //     document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    // });
+    Telegram.WebApp.onEvent('themeChanged', function() {
+        document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    });
 
-    // if (DemoApp.initDataUnsafe.query_id) {
-    //     document.getElementById('main_btn').style.display = 'block';
-    // }
-    // document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
-    // document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+    if (DemoApp.initDataUnsafe.query_id) {
+        document.getElementById('main_btn').style.display = 'block';
+    }
+    document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
+    document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
-    // document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    // // document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
-    // document.getElementById('text_field').focus();
-    // document.getElementById('regular_field').addEventListener('input', function(e) {
-    //     const val = this.value.toLowerCase();
-    //     if (val.indexOf('progress') >= 0) {
-    //         Telegram.WebApp.MainButton.showProgress();
-    //     } else {
-    //         Telegram.WebApp.MainButton.hideProgress();
-    //     }
-    // });
+    document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    // document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
+    document.getElementById('text_field').focus();
+    document.getElementById('regular_field').addEventListener('input', function(e) {
+        const val = this.value.toLowerCase();
+        if (val.indexOf('progress') >= 0) {
+            Telegram.WebApp.MainButton.showProgress();
+        } else {
+            Telegram.WebApp.MainButton.hideProgress();
+        }
+    });
 
-    // document.getElementById('ver').innerHTML = Telegram.WebApp.version;
-    // document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
+    document.getElementById('ver').innerHTML = Telegram.WebApp.version;
+    document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
 
-    // if (DemoApp.initDataUnsafe.receiver) {
-    //     document.getElementById('peer_wrap').style.display = 'block';
-    //     document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
-    //     if (DemoApp.initDataUnsafe.receiver.photo_url) {
-    //         document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
-    //     } else {
-    //         document.getElementById('peer_photo').style.display = 'none';
-    //     }
-    // } else if (DemoApp.initDataUnsafe.chat) {
-    //     document.getElementById('peer_wrap').style.display = 'block';
-    //     document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.chat.title;
-    //     if (DemoApp.initDataUnsafe.chat.photo_url) {
-    //         document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.chat.photo_url);
-    //     } else {
-    //         document.getElementById('peer_photo').style.display = 'none';
-    //     }
-    // }
+    if (DemoApp.initDataUnsafe.receiver) {
+        document.getElementById('peer_wrap').style.display = 'block';
+        document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
+        if (DemoApp.initDataUnsafe.receiver.photo_url) {
+            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
+        } else {
+            document.getElementById('peer_photo').style.display = 'none';
+        }
+    } else if (DemoApp.initDataUnsafe.chat) {
+        document.getElementById('peer_wrap').style.display = 'block';
+        document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.chat.title;
+        if (DemoApp.initDataUnsafe.chat.photo_url) {
+            document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.chat.photo_url);
+        } else {
+            document.getElementById('peer_photo').style.display = 'none';
+        }
+    }
 
-    // DemoApp.checkInitData();
-    // DemoApp.init();
+    DemoApp.checkInitData();
+    DemoApp.init();
 
-    // function setViewportData() {
-    //     document.querySelector('.viewport-border')
-    //         .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
-    //     document.querySelector('.viewport-stable_border')
-    //         .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
-    //             ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
-    // }
-    // Telegram.WebApp.setHeaderColor('secondary_bg_color');
-    // Telegram.WebApp.onEvent('viewportChanged', setViewportData);
-    // setViewportData();
-    // Telegram.WebApp.onEvent('settingsButtonClicked', function() {
-    //     alert('Settings opened!');
-    // });
+    function setViewportData() {
+        document.querySelector('.viewport-border')
+            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
+        document.querySelector('.viewport-stable_border')
+            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
+                ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
+    }
+    Telegram.WebApp.setHeaderColor('secondary_bg_color');
+    Telegram.WebApp.onEvent('viewportChanged', setViewportData);
+    setViewportData();
+    Telegram.WebApp.onEvent('settingsButtonClicked', function() {
+        alert('Settings opened!');
+    });
 
-    // let prevBgColorVal = document.getElementById('bg_color_sel').value;
-    // const bgColorInput = document.getElementById('bg_color_input');
-    // const headerColorSel = document.getElementById('header_color_sel');
+    let prevBgColorVal = document.getElementById('bg_color_sel').value;
+    const bgColorInput = document.getElementById('bg_color_input');
+    const headerColorSel = document.getElementById('header_color_sel');
 
-    // bgColorInput.value = Telegram.WebApp.backgroundColor;
-    // document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    // headerColorSel.value = 'secondary_bg_color';
-    // headerColorSel.addEventListener('change', function(e) {
-    //     const colorKey = e.target.value;
-    //     document.getElementById('top_sect').classList.toggle('second', colorKey === 'secondary_bg_color');
-    //     Telegram.WebApp.setHeaderColor(colorKey);
-    //     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    // });
-    // bgColorInput.addEventListener('change', function(e) {
-    //     const color = e.target.value;
-    //     document.getElementById('bg_color_val').textContent = color;
-    //     headerColorSel.value = 'custom';
-    //     prevBgColorVal = document.getElementById('bg_color_sel').value;
-    //     Telegram.WebApp.setBackgroundColor(color);
-    //     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    // });
-    // headerColorSel.addEventListener('change', function(e) {
-    //     const colorKey = e.target.value;
-    //     if (colorKey === 'custom') {
-    //         headerColorSel.value = prevBgColorVal;
-    //         bgColorInput.focus();
-    //     } else {
-    //         document.getElementById('bg_color_val').textContent = 'custom...';
-    //         Telegram.WebApp.setBackgroundColor(colorKey);
-    //         document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    //         bgColorInput.value = Telegram.WebApp.backgroundColor;
-    //         prevBgColorVal = headerColorSel.value;
-    //     }
-    // });
+    bgColorInput.value = Telegram.WebApp.backgroundColor;
+    document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+    headerColorSel.value = 'secondary_bg_color';
+    headerColorSel.addEventListener('change', function(e) {
+        const colorKey = e.target.value;
+        document.getElementById('top_sect').classList.toggle('second', colorKey === 'secondary_bg_color');
+        Telegram.WebApp.setHeaderColor(colorKey);
+        document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+    });
+    bgColorInput.addEventListener('change', function(e) {
+        const color = e.target.value;
+        document.getElementById('bg_color_val').textContent = color;
+        headerColorSel.value = 'custom';
+        prevBgColorVal = document.getElementById('bg_color_sel').value;
+        Telegram.WebApp.setBackgroundColor(color);
+        document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+    });
+    headerColorSel.addEventListener('change', function(e) {
+        const colorKey = e.target.value;
+        if (colorKey === 'custom') {
+            headerColorSel.value = prevBgColorVal;
+            bgColorInput.focus();
+        } else {
+            document.getElementById('bg_color_val').textContent = 'custom...';
+            Telegram.WebApp.setBackgroundColor(colorKey);
+            document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+            bgColorInput.value = Telegram.WebApp.backgroundColor;
+            prevBgColorVal = headerColorSel.value;
+        }
+    });
 
-    // Telegram.WebApp.onEvent('themeChanged', function() {
-    //     bgColorInput.value = Telegram.WebApp.backgroundColor;
-    //     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    // });
+    Telegram.WebApp.onEvent('themeChanged', function() {
+        bgColorInput.value = Telegram.WebApp.backgroundColor;
+        document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+    });
 
-    // DemoApp.testClipboard(document.getElementById('clipboard_test'));
+    DemoApp.testClipboard(document.getElementById('clipboard_test'));
 </script>
 
 </body>
